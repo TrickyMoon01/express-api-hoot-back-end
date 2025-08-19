@@ -1,7 +1,6 @@
 // models/hoot.js
 
 const mongoose = require('mongoose');
-const Hoot = mongoose.model('Hoot', hootSchema);
 
 const commentSchema = new mongoose.Schema(
   {
@@ -35,6 +34,6 @@ const hootSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// models/hoot.js
+const Hoot = mongoose.model('Hoot', hootSchema);
 
 module.exports = Hoot;
