@@ -19,6 +19,8 @@ mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+const PORT = process.env.PORT ? process.env.PORT : 3000;
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -30,6 +32,6 @@ app.use('/test-jwt', testJwtRouter);
 app.use('/users', usersRouter);
 
 // Start the server and listen on port 3000
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('The express app is ready!');
 });
